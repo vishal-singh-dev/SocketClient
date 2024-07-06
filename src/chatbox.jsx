@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import MessageList from './Messages';
 import CryptoJS from 'crypto-js';
 
@@ -48,13 +48,13 @@ const Vector='1234567890123456'
             padding: CryptoJS.pad.Pkcs7 }).toString();
     };
 
-    const decrypt = (encrypted) => {
-        let bytes = CryptoJS.AES.decrypt(encrypted, Key, { iv: Vector,
-            mode: CryptoJS.mode.CBC,
-            padding: CryptoJS.pad.Pkcs7
-         });
-        return bytes.toString(CryptoJS.enc.Utf8);
-    };
+    //const decrypt = (encrypted) => {
+      //  let bytes = CryptoJS.AES.decrypt(encrypted, Key, { iv: Vector,
+        //    mode: CryptoJS.mode.CBC,
+          //  padding: CryptoJS.pad.Pkcs7
+         //});
+       // return bytes.toString(CryptoJS.enc.Utf8);
+    //};
 
     const sendMessage = () => {
         if (ws.current && ws.current.readyState === WebSocket.OPEN) {
